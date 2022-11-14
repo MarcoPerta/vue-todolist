@@ -4,19 +4,21 @@ var app = new Vue(
       data: {
         todoList : [
             {
-                toDo : 'comprare il pane'
+                toDo : 'comprare il pane',
+                toDoDone : false
             },
             {
-                toDo : 'comprare il latte'
+                toDo : 'comprare il latte',
+                toDoDone : false
             }
         ]
      },
 
-     
-      method: {
+
+      methods: {
         
         eliminaRiga(index){
-            todoList.splice( index, 1)
+            this.todoList.splice( index, 1)
         }
 
      }
