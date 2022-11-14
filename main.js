@@ -19,6 +19,10 @@ var app = new Vue(
         
         eliminaRiga(index){
             this.todoList.splice( index, 1)
+        },
+
+        verifica(index){
+            this.todoList[index].toDoDone = true
         }
 
      }
