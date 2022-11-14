@@ -11,18 +11,30 @@ var app = new Vue(
                 toDo : 'comprare il latte',
                 toDoDone : false
             }
-        ]
+        ],
+        message : ''
      },
 
 
       methods: {
         
         eliminaRiga(index){
-            this.todoList.splice( index, 1)
+            this.todoList.splice( index, 1);
         },
 
         verifica(index){
-            this.todoList[index].toDoDone = true
+            this.todoList[index].toDoDone = true;
+        },
+
+        inserisci(){
+            this.todoList.push( 
+                {
+                    toDo : this.message,
+                    toDoDone : false
+                }
+                );
+
+            this.message = '';
         }
 
      }
