@@ -11,7 +11,13 @@ var app = new Vue(
             }
         ]
      },
+
+     
       method: {
+        
+        eliminaRiga(index){
+            todoList.splice( index, 1)
+        }
 
      }
     }
