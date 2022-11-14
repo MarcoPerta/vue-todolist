@@ -20,8 +20,8 @@
         <div>
             <ul class="list-group" >
                 <li class="list-group item flex-row justify-content-between" v-for="(element,index) in todoList">
-                    <span @click="verifica(index)" :class="(element.toDoDone == true) ? 'text-decoration-line-through' : ''">{{ todoList[index].toDo }}</span>
-                    <i class="fa-solid fa-xmark text-danger" @click="eliminaRiga(index)"></i>
+                    <span @click="verifica()" :class="(element.toDoDone == true) ? 'text-decoration-line-through' : ''">{{ element.toDo }}</span>
+                    <i class="fa-solid fa-xmark text-danger" @click="eliminaRiga(element ,index)"></i>
                 </li>
             </ul>
         </div>
@@ -29,6 +29,11 @@
 
     <div class="container text-center pt-3">
         <h3>ToDo completate : </h3>
+        <ul class="list-group" >
+            <li class="list-group item flex-row justify-content-between" v-for="(element,index) in todoCompleta">
+                <span :class="(element.toDoDone == true) ? 'text-decoration-line-through' : ''">{{ element.toDo }}</span>
+                <i class="fa-solid fa-xmark text-danger" @click="eliminaRiga(element ,index)"></i>
+            </li>
     </div>
   </div>
 

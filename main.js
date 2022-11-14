@@ -12,18 +12,29 @@ var app = new Vue(
                 toDoDone : false
             }
         ],
-        message : ''
+        todoCompleta : []
+       
      },
 
 
       methods: {
         
-        eliminaRiga(index){
-            this.todoList.splice( index, 1);
+        eliminaRiga(element ,index){
+            if(element.toDoDone == true){
+                this.todoCompleta.splice(index,1);
+            }else {
+                this.todoList.splice(index,1); 
+                }
         },
 
-        verifica(index){
-            this.todoList[index].toDoDone = true;
+        verifica(){
+            // this.todoList[index].toDoDone = true;
+            this.todoList.forEach((element,index) => {
+                if( element.toDoDone = true ){
+                    this.todoCompleta.push(element);
+                    this.todoList.splice(index,1);
+                }
+            });
         },
 
         inserisci(){
